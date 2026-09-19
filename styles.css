@@ -1,0 +1,342 @@
+/* MLD VELAN - Reen Naturals Style Artisanal D2C Store Stylesheet */
+@import url('https://fonts.googleapis.com/css2?family=Marcellus&family=Mukta+Malar:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,600&display=swap');
+
+:root {
+  --brand-burgundy: #5b1e31;
+  --brand-burgundy-dark: #421321;
+  --brand-burgundy-light: #732a40;
+  --brand-gold: #f5b700;
+  --brand-gold-hover: #e0a700;
+  --brand-gold-light: #fef9e8;
+  --brand-green: #2d5a27;
+  --brand-green-light: #eaf3e8;
+  --brand-cream: #fdfbf7;
+  --brand-border: #eee7dd;
+  --brand-text: #222222;
+  --brand-muted: #666666;
+  --terracotta: #c85a2b;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: #ffffff;
+  color: var(--brand-text);
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+
+.font-serif-luxury {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+.font-marcellus {
+  font-family: 'Marcellus', 'Playfair Display', serif;
+}
+
+.tamil-text, [lang="ta"] {
+  font-family: 'Mukta Malar', 'Outfit', sans-serif !important;
+}
+
+/* 1. TOP PROMO BAR (Reen Naturals) */
+.promo-bar {
+  background: var(--brand-burgundy);
+  color: #ffffff;
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  padding: 7px 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.promo-ticker {
+  display: inline-flex;
+  gap: 30px;
+  animation: promo-slide 20s linear infinite;
+  white-space: nowrap;
+}
+
+@keyframes promo-slide {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+/* 2. REEN NATURALS STYLE HEADER */
+.reen-header {
+  background: #ffffff;
+  border-bottom: 1px solid var(--brand-border);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  box-shadow: 0 2px 10px rgba(91, 30, 49, 0.04);
+}
+
+.reen-nav a {
+  color: #333333;
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  position: relative;
+  padding: 4px 0;
+}
+
+.reen-nav a:hover, .reen-nav a.active {
+  color: var(--brand-burgundy);
+}
+
+.reen-nav a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: var(--brand-burgundy);
+  transition: width 0.25s ease;
+}
+
+.reen-nav a:hover::after {
+  width: 100%;
+}
+
+/* 3. HERO CAROUSEL (Matching Reen Naturals in Screenshot) */
+.hero-carousel-container {
+  position: relative;
+  padding: 24px 0 40px;
+  background: linear-gradient(180deg, #fdfbf7 0%, #ffffff 100%);
+  overflow: hidden;
+}
+
+.hero-slider-track {
+  display: flex;
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+  will-change: transform;
+}
+
+.hero-slide {
+  min-width: 100%;
+  padding: 0 16px;
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  gap: 24px;
+}
+
+@media (min-width: 1024px) {
+  .hero-slide {
+    grid-template-columns: 1.15fr 0.85fr;
+    padding: 0 40px;
+    gap: 40px;
+  }
+}
+
+.hero-banner-box {
+  background: linear-gradient(135deg, #fbf7ee 0%, #f4ebd8 100%);
+  border-radius: 28px;
+  border: 1px solid var(--brand-border);
+  padding: 32px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 16px 36px rgba(91, 30, 49, 0.07);
+}
+
+.hero-shop-btn {
+  background: var(--brand-gold);
+  color: #111111;
+  font-weight: 800;
+  font-size: 13.5px;
+  letter-spacing: 0.5px;
+  padding: 12px 32px;
+  border-radius: 9999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-decoration: none;
+  box-shadow: 0 4px 16px rgba(245, 183, 0, 0.4);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+}
+
+.hero-shop-btn:hover {
+  background: var(--brand-gold-hover);
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 6px 20px rgba(245, 183, 0, 0.5);
+}
+
+/* 4. PRODUCT CARDS & 3D HOVER ANIMATION */
+.product-card-luxury {
+  background: #ffffff;
+  border-radius: 20px;
+  border: 1px solid var(--brand-border);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+}
+
+.product-card-luxury:hover {
+  transform: translateY(-6px);
+  border-color: var(--brand-burgundy-light);
+  box-shadow: 0 16px 32px rgba(91, 30, 49, 0.1);
+}
+
+.product-card-img-wrap {
+  width: 100%;
+  height: 220px;
+  background: linear-gradient(135deg, #fdfbf7 0%, #f7f1e6 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 70px;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid var(--brand-border);
+}
+
+.product-card-img-wrap::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    60deg,
+    transparent 40%,
+    rgba(255, 255, 255, 0.4) 50%,
+    transparent 60%
+  );
+  transform: rotate(25deg);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.product-card-luxury:hover .product-card-img-wrap::after {
+  opacity: 1;
+  animation: shine-sweep 1.2s ease-in-out;
+}
+
+@keyframes shine-sweep {
+  0% { transform: translate(-100%, -100%) rotate(25deg); }
+  100% { transform: translate(100%, 100%) rotate(25deg); }
+}
+
+.add-to-bag-btn {
+  background: var(--brand-burgundy);
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 12px;
+  padding: 10px 16px;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  width: 100%;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.add-to-bag-btn:hover {
+  background: var(--brand-burgundy-dark);
+  transform: scale(1.01);
+}
+
+/* 5. FLOATING BOTANICAL PARTICLES ANIMATION */
+@keyframes floatParticle {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-12px) rotate(6deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
+.floating-leaf {
+  animation: floatParticle 5s ease-in-out infinite;
+}
+
+.floating-leaf-delay {
+  animation: floatParticle 6s ease-in-out infinite 2s;
+}
+
+/* 6. FLOATING WHATSAPP BUTTON (Matching Reen Naturals Screenshot) */
+.floating-whatsapp-widget {
+  position: fixed;
+  bottom: 24px;
+  left: 24px;
+  z-index: 999;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: #25D366;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.45);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
+}
+
+.floating-whatsapp-widget:hover {
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 10px 28px rgba(37, 211, 102, 0.6);
+}
+
+.floating-whatsapp-widget::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 2px solid #25D366;
+  opacity: 0.6;
+  animation: pulse-ring 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(0.9); opacity: 0.8; }
+  100% { transform: scale(1.4); opacity: 0; }
+}
+
+/* 7. CART DRAWER & MODALS */
+.cart-drawer {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+#toast-container {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.toast {
+  animation: slideIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes slideIn {
+  from { transform: translateX(100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@media print {
+  body * { visibility: hidden; }
+  #invoice-printable, #invoice-printable * { visibility: visible; }
+  #invoice-printable { position: absolute; left: 0; top: 0; width: 100%; }
+  .no-print { display: none !important; }
+}
